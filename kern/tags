@@ -1,0 +1,122 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALT	console.c	218;"	d	file:
+C	console.c	285;"	d	file:
+CAPSLOCK	console.c	220;"	d	file:
+CGA_BASE	console.h	13;"	d
+CGA_BUF	console.h	14;"	d
+CHECKSUM	entry.S	/^#define CHECKSUM (-(MULTIBOOT_HEADER_MAGIC + MULTIBOOT_HEADER_FLAGS))$/;"	d
+CMDBUF_SIZE	monitor.c	14;"	d	file:
+COM1	console.c	26;"	d	file:
+COM_DLL	console.c	30;"	d	file:
+COM_DLM	console.c	31;"	d	file:
+COM_FCR	console.c	35;"	d	file:
+COM_IER	console.c	32;"	d	file:
+COM_IER_RDI	console.c	33;"	d	file:
+COM_IIR	console.c	34;"	d	file:
+COM_LCR	console.c	36;"	d	file:
+COM_LCR_DLAB	console.c	37;"	d	file:
+COM_LCR_WLEN8	console.c	38;"	d	file:
+COM_LSR	console.c	43;"	d	file:
+COM_LSR_DATA	console.c	44;"	d	file:
+COM_LSR_TSRE	console.c	46;"	d	file:
+COM_LSR_TXRDY	console.c	45;"	d	file:
+COM_MCR	console.c	39;"	d	file:
+COM_MCR_DTR	console.c	41;"	d	file:
+COM_MCR_OUT2	console.c	42;"	d	file:
+COM_MCR_RTS	console.c	40;"	d	file:
+COM_RX	console.c	28;"	d	file:
+COM_TX	console.c	29;"	d	file:
+CONSBUFSIZE	console.c	385;"	d	file:
+CRT_COLS	console.h	17;"	d
+CRT_ROWS	console.h	16;"	d
+CRT_SIZE	console.h	18;"	d
+CTL	console.c	217;"	d	file:
+Command	monitor.c	/^struct Command {$/;"	s	file:
+E0ESC	console.c	224;"	d	file:
+Eipdebuginfo	kdebug.h	/^struct Eipdebuginfo {$/;"	s
+JOS_KERN_KDEBUG_H	kdebug.h	2;"	d
+JOS_KERN_MONITOR_H	monitor.h	2;"	d
+MAXARGS	monitor.c	69;"	d	file:
+MONO_BASE	console.h	11;"	d
+MONO_BUF	console.h	12;"	d
+MULTIBOOT_HEADER_FLAGS	entry.S	/^#define MULTIBOOT_HEADER_FLAGS (0)$/;"	d
+MULTIBOOT_HEADER_MAGIC	entry.S	/^#define MULTIBOOT_HEADER_MAGIC (0x1BADB002)$/;"	d
+NO	console.c	214;"	d	file:
+NUMLOCK	console.c	221;"	d	file:
+RELOC	entry.S	/^#define	RELOC(x) ((x) - KERNBASE)$/;"	d
+SCROLLLOCK	console.c	222;"	d	file:
+SHIFT	console.c	216;"	d	file:
+SRL	entry.S	/^#define SRL(val, shamt)		(((val) >> (shamt)) & ~(-1 << (32 - (shamt))))$/;"	d
+WHITESPACE	monitor.c	68;"	d	file:
+_CONSOLE_H_	console.h	4;"	d
+_panic	init.c	/^_panic(const char *file, int line, const char *fmt,...)$/;"	f
+_start	entry.S	/^_start = RELOC(entry)$/;"	d
+_warn	init.c	/^_warn(const char *file, int line, const char *fmt,...)$/;"	f
+addr_6845	console.c	/^static unsigned addr_6845;$/;"	v	file:
+bootstack	entry.S	/^bootstack:$/;"	l
+bootstacktop	entry.S	/^bootstacktop:$/;"	l
+buf	console.c	/^	uint8_t buf[CONSBUFSIZE];$/;"	m	struct:__anon1	file:
+cga_init	console.c	/^cga_init(void)$/;"	f	file:
+cga_putc	console.c	/^cga_putc(int c)$/;"	f	file:
+charcode	console.c	/^static uint8_t *charcode[4] = {$/;"	v	file:
+commands	monitor.c	/^static struct Command commands[] = {$/;"	v	typeref:struct:Command	file:
+cons	console.c	/^} cons;$/;"	v	typeref:struct:__anon1	file:
+cons_getc	console.c	/^cons_getc(void)$/;"	f
+cons_init	console.c	/^cons_init(void)$/;"	f
+cons_intr	console.c	/^cons_intr(int (*proc)(void))$/;"	f	file:
+cons_putc	console.c	/^cons_putc(int c)$/;"	f	file:
+cprintf	printf.c	/^cprintf(const char *fmt, ...)$/;"	f
+cputchar	console.c	/^cputchar(int c)$/;"	f
+crt_buf	console.c	/^static uint16_t *crt_buf;$/;"	v	file:
+crt_pos	console.c	/^static uint16_t crt_pos;$/;"	v	file:
+ctlmap	console.c	/^static uint8_t ctlmap[256] =$/;"	v	file:
+debuginfo_eip	kdebug.c	/^debuginfo_eip(uintptr_t addr, struct Eipdebuginfo *info)$/;"	f
+delay	console.c	/^delay(void)$/;"	f	file:
+desc	monitor.c	/^	const char *desc;$/;"	m	struct:Command	file:
+eip_file	kdebug.h	/^	const char *eip_file;		\/\/ Source code filename for EIP$/;"	m	struct:Eipdebuginfo
+eip_fn_addr	kdebug.h	/^	uintptr_t eip_fn_addr;		\/\/ Address of start of function$/;"	m	struct:Eipdebuginfo
+eip_fn_name	kdebug.h	/^	const char *eip_fn_name;	\/\/ Name of function containing EIP$/;"	m	struct:Eipdebuginfo
+eip_fn_namelen	kdebug.h	/^	int eip_fn_namelen;		\/\/ Length of function name$/;"	m	struct:Eipdebuginfo
+eip_fn_narg	kdebug.h	/^	int eip_fn_narg;		\/\/ Number of function arguments$/;"	m	struct:Eipdebuginfo
+eip_line	kdebug.h	/^	int eip_line;			\/\/ Source code linenumber for EIP$/;"	m	struct:Eipdebuginfo
+entry	entry.S	/^entry:$/;"	l
+entry_pgdir	entrypgdir.c	/^pde_t entry_pgdir[NPDENTRIES] = {$/;"	v
+entry_pgtable	entrypgdir.c	/^pte_t entry_pgtable[NPTENTRIES] = {$/;"	v
+entry_pgtable	entrypgdir.c	/^pte_t entry_pgtable[NPTENTRIES];$/;"	v
+func	monitor.c	/^	int (*func)(int argc, char** argv, struct Trapframe* tf);$/;"	m	struct:Command	file:
+getchar	console.c	/^getchar(void)$/;"	f
+i386_init	init.c	/^i386_init(void)$/;"	f
+iscons	console.c	/^iscons(int fdnum)$/;"	f
+kbd_init	console.c	/^kbd_init(void)$/;"	f	file:
+kbd_intr	console.c	/^kbd_intr(void)$/;"	f
+kbd_proc_data	console.c	/^kbd_proc_data(void)$/;"	f	file:
+lpt_putc	console.c	/^lpt_putc(int c)$/;"	f	file:
+mon_backtrace	monitor.c	/^mon_backtrace(int argc, char **argv, struct Trapframe *tf)$/;"	f
+mon_help	monitor.c	/^mon_help(int argc, char **argv, struct Trapframe *tf)$/;"	f
+mon_kerninfo	monitor.c	/^mon_kerninfo(int argc, char **argv, struct Trapframe *tf)$/;"	f
+monitor	monitor.c	/^monitor(struct Trapframe *tf)$/;"	f
+name	monitor.c	/^	const char *name;$/;"	m	struct:Command	file:
+normalmap	console.c	/^static uint8_t normalmap[256] =$/;"	v	file:
+panicstr	init.c	/^const char *panicstr;$/;"	v
+putch	printf.c	/^putch(int ch, int *cnt)$/;"	f	file:
+relocated	entry.S	/^relocated:$/;"	l
+rpos	console.c	/^	uint32_t rpos;$/;"	m	struct:__anon1	file:
+runcmd	monitor.c	/^runcmd(char *buf, struct Trapframe *tf)$/;"	f	file:
+serial_exists	console.c	/^static bool serial_exists;$/;"	v	file:
+serial_init	console.c	/^serial_init(void)$/;"	f	file:
+serial_intr	console.c	/^serial_intr(void)$/;"	f
+serial_proc_data	console.c	/^serial_proc_data(void)$/;"	f	file:
+serial_putc	console.c	/^serial_putc(int c)$/;"	f	file:
+shiftcode	console.c	/^static uint8_t shiftcode[256] =$/;"	v	file:
+shiftmap	console.c	/^static uint8_t shiftmap[256] =$/;"	v	file:
+spin	entry.S	/^spin:	jmp	spin$/;"	l
+stab_binsearch	kdebug.c	/^stab_binsearch(const struct Stab *stabs, int *region_left, int *region_right,$/;"	f	file:
+test_backtrace	init.c	/^test_backtrace(int x)$/;"	f
+togglecode	console.c	/^static uint8_t togglecode[256] =$/;"	v	file:
+vcprintf	printf.c	/^vcprintf(const char *fmt, va_list ap)$/;"	f
+wpos	console.c	/^	uint32_t wpos;$/;"	m	struct:__anon1	file:
