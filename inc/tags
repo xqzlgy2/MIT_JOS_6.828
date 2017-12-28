@@ -34,14 +34,23 @@ ELF_SHT_NULL	elf.h	57;"	d
 ELF_SHT_PROGBITS	elf.h	58;"	d
 ELF_SHT_STRTAB	elf.h	60;"	d
 ELF_SHT_SYMTAB	elf.h	59;"	d
+ENVX	env.h	30;"	d
+ENV_DYING	env.h	/^	ENV_DYING,$/;"	e	enum:__anon1
+ENV_FREE	env.h	/^	ENV_FREE = 0,$/;"	e	enum:__anon1
+ENV_NOT_RUNNABLE	env.h	/^	ENV_NOT_RUNNABLE$/;"	e	enum:__anon1
+ENV_RUNNABLE	env.h	/^	ENV_RUNNABLE,$/;"	e	enum:__anon1
+ENV_RUNNING	env.h	/^	ENV_RUNNING,$/;"	e	enum:__anon1
+ENV_TYPE_USER	env.h	/^	ENV_TYPE_USER = 0,$/;"	e	enum:EnvType
 EXTPHYSMEM	memlayout.h	93;"	d
-E_BAD_ENV	error.h	/^	E_BAD_ENV	,	\/\/ Environment doesn't exist or otherwise$/;"	e	enum:__anon1
-E_FAULT	error.h	/^	E_FAULT		,	\/\/ Memory fault$/;"	e	enum:__anon1
-E_INVAL	error.h	/^	E_INVAL		,	\/\/ Invalid parameter$/;"	e	enum:__anon1
-E_NO_FREE_ENV	error.h	/^	E_NO_FREE_ENV	,	\/\/ Attempt to create a new environment beyond$/;"	e	enum:__anon1
-E_NO_MEM	error.h	/^	E_NO_MEM	,	\/\/ Request failed due to memory shortage$/;"	e	enum:__anon1
-E_UNSPECIFIED	error.h	/^	E_UNSPECIFIED	= 1,	\/\/ Unspecified or unknown problem$/;"	e	enum:__anon1
+E_BAD_ENV	error.h	/^	E_BAD_ENV	,	\/\/ Environment doesn't exist or otherwise$/;"	e	enum:__anon2
+E_FAULT	error.h	/^	E_FAULT		,	\/\/ Memory fault$/;"	e	enum:__anon2
+E_INVAL	error.h	/^	E_INVAL		,	\/\/ Invalid parameter$/;"	e	enum:__anon2
+E_NO_FREE_ENV	error.h	/^	E_NO_FREE_ENV	,	\/\/ Attempt to create a new environment beyond$/;"	e	enum:__anon2
+E_NO_MEM	error.h	/^	E_NO_MEM	,	\/\/ Request failed due to memory shortage$/;"	e	enum:__anon2
+E_UNSPECIFIED	error.h	/^	E_UNSPECIFIED	= 1,	\/\/ Unspecified or unknown problem$/;"	e	enum:__anon2
 Elf	elf.h	/^struct Elf {$/;"	s
+Env	env.h	/^struct Env {$/;"	s
+EnvType	env.h	/^enum EnvType {$/;"	g
 FEC_PR	mmu.h	123;"	d
 FEC_U	mmu.h	125;"	d
 FEC_WR	mmu.h	124;"	d
@@ -73,14 +82,25 @@ GD_UD	memlayout.h	18;"	d
 GD_UT	memlayout.h	17;"	d
 Gatedesc	mmu.h	/^struct Gatedesc {$/;"	s
 IOPHYSMEM	memlayout.h	92;"	d
+IRQ_ERROR	trap.h	40;"	d
+IRQ_IDE	trap.h	39;"	d
+IRQ_KBD	trap.h	36;"	d
+IRQ_OFFSET	trap.h	32;"	d
+IRQ_SERIAL	trap.h	37;"	d
+IRQ_SPURIOUS	trap.h	38;"	d
+IRQ_TIMER	trap.h	35;"	d
 JOS_INC_ASSERT_H	assert.h	4;"	d
 JOS_INC_ELF_H	elf.h	2;"	d
+JOS_INC_ENV_H	env.h	4;"	d
 JOS_INC_ERROR_H	error.h	4;"	d
+JOS_INC_LIB_H	lib.h	8;"	d
 JOS_INC_MEMLAYOUT_H	memlayout.h	2;"	d
 JOS_INC_MMU_H	mmu.h	2;"	d
 JOS_INC_STDARG_H	stdarg.h	4;"	d
 JOS_INC_STDIO_H	stdio.h	2;"	d
 JOS_INC_STRING_H	string.h	2;"	d
+JOS_INC_SYSCALL_H	syscall.h	2;"	d
+JOS_INC_TRAP_H	trap.h	2;"	d
 JOS_INC_TYPES_H	types.h	2;"	d
 JOS_INC_X86_H	x86.h	2;"	d
 JOS_KBDREG_H	kbdreg.h	2;"	d
@@ -153,13 +173,16 @@ KSTKGAP	memlayout.h	98;"	d
 KSTKSIZE	memlayout.h	97;"	d
 K_LDCMDBYTE	kbdreg.h	51;"	d
 K_RDCMDBYTE	kbdreg.h	50;"	d
+LOG2NENV	env.h	28;"	d
 MAX	types.h	49;"	d
-MAXERROR	error.h	/^	MAXERROR$/;"	e	enum:__anon1
+MAXERROR	error.h	/^	MAXERROR$/;"	e	enum:__anon2
 MIN	types.h	43;"	d
 MMIOBASE	memlayout.h	102;"	d
 MMIOLIM	memlayout.h	101;"	d
+NENV	env.h	29;"	d
 NPDENTRIES	mmu.h	45;"	d
 NPTENTRIES	mmu.h	46;"	d
+NSYSCALLS	syscall.h	/^	NSYSCALLS$/;"	e	enum:__anon3
 NULL	stdio.h	7;"	d
 NULL	types.h	5;"	d
 N_BCOMM	stab.h	37;"	d
@@ -188,6 +211,14 @@ N_SO	stab.h	27;"	d
 N_SOL	stab.h	30;"	d
 N_SSYM	stab.h	26;"	d
 N_STSYM	stab.h	18;"	d
+O_ACCMODE	lib.h	49;"	d
+O_CREAT	lib.h	51;"	d
+O_EXCL	lib.h	53;"	d
+O_MKDIR	lib.h	54;"	d
+O_RDONLY	lib.h	46;"	d
+O_RDWR	lib.h	48;"	d
+O_TRUNC	lib.h	52;"	d
+O_WRONLY	lib.h	47;"	d
 PDX	mmu.h	33;"	d
 PDXSHIFT	mmu.h	55;"	d
 PFTEMP	memlayout.h	137;"	d
@@ -212,8 +243,10 @@ PTSHIFT	mmu.h	52;"	d
 PTSIZE	mmu.h	51;"	d
 PTX	mmu.h	36;"	d
 PTXSHIFT	mmu.h	54;"	d
+PageInfo	memlayout.h	/^struct PageInfo {$/;"	s
 Proghdr	elf.h	/^struct Proghdr {$/;"	s
 Pseudodesc	mmu.h	/^struct Pseudodesc {$/;"	s
+PushRegs	trap.h	/^struct PushRegs {$/;"	s
 ROUNDDOWN	types.h	58;"	d
 ROUNDUP	types.h	64;"	d
 SEG	mmu.h	142;"	d
@@ -242,13 +275,39 @@ STS_T32B	mmu.h	200;"	d
 STS_TG	mmu.h	196;"	d
 STS_TG16	mmu.h	198;"	d
 STS_TG32	mmu.h	203;"	d
+SYS_cgetc	syscall.h	/^	SYS_cgetc,$/;"	e	enum:__anon3
+SYS_cputs	syscall.h	/^	SYS_cputs = 0,$/;"	e	enum:__anon3
+SYS_env_destroy	syscall.h	/^	SYS_env_destroy,$/;"	e	enum:__anon3
+SYS_getenvid	syscall.h	/^	SYS_getenvid,$/;"	e	enum:__anon3
 Secthdr	elf.h	/^struct Secthdr {$/;"	s
 Segdesc	mmu.h	/^struct Segdesc {$/;"	s
 Stab	stab.h	/^struct Stab {$/;"	s
+T_ALIGN	trap.h	23;"	d
+T_BOUND	trap.h	11;"	d
+T_BRKPT	trap.h	9;"	d
+T_DBLFLT	trap.h	14;"	d
+T_DEBUG	trap.h	7;"	d
+T_DEFAULT	trap.h	30;"	d
+T_DEVICE	trap.h	13;"	d
+T_DIVIDE	trap.h	6;"	d
+T_FPERR	trap.h	22;"	d
+T_GPFLT	trap.h	19;"	d
+T_ILLOP	trap.h	12;"	d
+T_MCHK	trap.h	24;"	d
+T_NMI	trap.h	8;"	d
+T_OFLOW	trap.h	10;"	d
+T_PGFLT	trap.h	20;"	d
+T_SEGNP	trap.h	17;"	d
+T_SIMDERR	trap.h	25;"	d
+T_STACK	trap.h	18;"	d
+T_SYSCALL	trap.h	29;"	d
+T_TSS	trap.h	16;"	d
 Taskstate	mmu.h	/^struct Taskstate {$/;"	s
+Trapframe	trap.h	/^struct Trapframe {$/;"	s
 UENVS	memlayout.h	116;"	d
 ULIM	memlayout.h	104;"	d
 UPAGES	memlayout.h	114;"	d
+USED	lib.h	20;"	d
 USTABDATA	memlayout.h	139;"	d
 USTACKTOP	memlayout.h	128;"	d
 UTEMP	memlayout.h	134;"	d
@@ -275,7 +334,16 @@ e_shoff	elf.h	/^	uint32_t e_shoff;$/;"	m	struct:Elf
 e_shstrndx	elf.h	/^	uint16_t e_shstrndx;$/;"	m	struct:Elf
 e_type	elf.h	/^	uint16_t e_type;$/;"	m	struct:Elf
 e_version	elf.h	/^	uint32_t e_version;$/;"	m	struct:Elf
-false	types.h	/^enum { false, true };$/;"	e	enum:__anon2
+env_id	env.h	/^	envid_t env_id;			\/\/ Unique environment identifier$/;"	m	struct:Env
+env_link	env.h	/^	struct Env *env_link;		\/\/ Next free Env$/;"	m	struct:Env	typeref:struct:Env::Env
+env_parent_id	env.h	/^	envid_t env_parent_id;		\/\/ env_id of this env's parent$/;"	m	struct:Env
+env_pgdir	env.h	/^	pde_t *env_pgdir;		\/\/ Kernel virtual address of page dir$/;"	m	struct:Env
+env_runs	env.h	/^	uint32_t env_runs;		\/\/ Number of times environment has run$/;"	m	struct:Env
+env_status	env.h	/^	unsigned env_status;		\/\/ Status of the environment$/;"	m	struct:Env
+env_tf	env.h	/^	struct Trapframe env_tf;	\/\/ Saved registers$/;"	m	struct:Env	typeref:struct:Env::Trapframe
+env_type	env.h	/^	enum EnvType env_type;		\/\/ Indicates special system environments$/;"	m	struct:Env	typeref:enum:Env::EnvType
+envid_t	env.h	/^typedef int32_t envid_t;$/;"	t
+false	types.h	/^enum { false, true };$/;"	e	enum:__anon4
 gd_args	mmu.h	/^	unsigned gd_args : 5;        \/\/ # args, 0 for interrupt\/trap gates$/;"	m	struct:Gatedesc
 gd_dpl	mmu.h	/^	unsigned gd_dpl : 2;         \/\/ descriptor(meaning new) privilege level$/;"	m	struct:Gatedesc
 gd_off_15_0	mmu.h	/^	unsigned gd_off_15_0 : 16;   \/\/ low 16 bits of offset in segment$/;"	m	struct:Gatedesc
@@ -330,6 +398,8 @@ pd_base	mmu.h	/^	uint32_t pd_base;		\/\/ Base address$/;"	m	struct:Pseudodesc
 pd_lim	mmu.h	/^	uint16_t pd_lim;		\/\/ Limit$/;"	m	struct:Pseudodesc
 pde_t	memlayout.h	/^typedef uint32_t pde_t;$/;"	t
 physaddr_t	types.h	/^typedef uint32_t physaddr_t;$/;"	t
+pp_link	memlayout.h	/^	struct PageInfo *pp_link;$/;"	m	struct:PageInfo	typeref:struct:PageInfo::PageInfo
+pp_ref	memlayout.h	/^	uint16_t pp_ref;$/;"	m	struct:PageInfo
 ppn_t	types.h	/^typedef uint32_t ppn_t;$/;"	t
 pte_t	memlayout.h	/^typedef uint32_t pte_t;$/;"	t
 rcr0	x86.h	/^rcr0(void)$/;"	f
@@ -340,6 +410,14 @@ read_ebp	x86.h	/^read_ebp(void)$/;"	f
 read_eflags	x86.h	/^read_eflags(void)$/;"	f
 read_esp	x86.h	/^read_esp(void)$/;"	f
 read_tsc	x86.h	/^read_tsc(void)$/;"	f
+reg_eax	trap.h	/^	uint32_t reg_eax;$/;"	m	struct:PushRegs
+reg_ebp	trap.h	/^	uint32_t reg_ebp;$/;"	m	struct:PushRegs
+reg_ebx	trap.h	/^	uint32_t reg_ebx;$/;"	m	struct:PushRegs
+reg_ecx	trap.h	/^	uint32_t reg_ecx;$/;"	m	struct:PushRegs
+reg_edi	trap.h	/^	uint32_t reg_edi;$/;"	m	struct:PushRegs
+reg_edx	trap.h	/^	uint32_t reg_edx;$/;"	m	struct:PushRegs
+reg_esi	trap.h	/^	uint32_t reg_esi;$/;"	m	struct:PushRegs
+reg_oesp	trap.h	/^	uint32_t reg_oesp;		\/* Useless *\/$/;"	m	struct:PushRegs
 sd_avl	mmu.h	/^	unsigned sd_avl : 1;        \/\/ Unused (available for software use)$/;"	m	struct:Segdesc
 sd_base_15_0	mmu.h	/^	unsigned sd_base_15_0 : 16; \/\/ Low bits of segment base address$/;"	m	struct:Segdesc
 sd_base_23_16	mmu.h	/^	unsigned sd_base_23_16 : 8; \/\/ Middle bits of segment base address$/;"	m	struct:Segdesc
@@ -366,8 +444,22 @@ sh_type	elf.h	/^	uint32_t sh_type;$/;"	m	struct:Secthdr
 size_t	types.h	/^typedef uint32_t size_t;$/;"	t
 ssize_t	types.h	/^typedef int32_t ssize_t;$/;"	t
 static_assert	assert.h	18;"	d
+tf_cs	trap.h	/^	uint16_t tf_cs;$/;"	m	struct:Trapframe
+tf_ds	trap.h	/^	uint16_t tf_ds;$/;"	m	struct:Trapframe
+tf_eflags	trap.h	/^	uint32_t tf_eflags;$/;"	m	struct:Trapframe
+tf_eip	trap.h	/^	uintptr_t tf_eip;$/;"	m	struct:Trapframe
+tf_err	trap.h	/^	uint32_t tf_err;$/;"	m	struct:Trapframe
+tf_es	trap.h	/^	uint16_t tf_es;$/;"	m	struct:Trapframe
+tf_esp	trap.h	/^	uintptr_t tf_esp;$/;"	m	struct:Trapframe
+tf_padding1	trap.h	/^	uint16_t tf_padding1;$/;"	m	struct:Trapframe
+tf_padding2	trap.h	/^	uint16_t tf_padding2;$/;"	m	struct:Trapframe
+tf_padding3	trap.h	/^	uint16_t tf_padding3;$/;"	m	struct:Trapframe
+tf_padding4	trap.h	/^	uint16_t tf_padding4;$/;"	m	struct:Trapframe
+tf_regs	trap.h	/^	struct PushRegs tf_regs;$/;"	m	struct:Trapframe	typeref:struct:Trapframe::PushRegs
+tf_ss	trap.h	/^	uint16_t tf_ss;$/;"	m	struct:Trapframe
+tf_trapno	trap.h	/^	uint32_t tf_trapno;$/;"	m	struct:Trapframe
 tlbflush	x86.h	/^tlbflush(void)$/;"	f
-true	types.h	/^enum { false, true };$/;"	e	enum:__anon2
+true	types.h	/^enum { false, true };$/;"	e	enum:__anon4
 ts_cr3	mmu.h	/^	physaddr_t ts_cr3;	\/\/ Page directory base$/;"	m	struct:Taskstate
 ts_cs	mmu.h	/^	uint16_t ts_cs;$/;"	m	struct:Taskstate
 ts_ds	mmu.h	/^	uint16_t ts_ds;$/;"	m	struct:Taskstate
